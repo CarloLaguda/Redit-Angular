@@ -9,9 +9,9 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @Input() article: Article
-  @HostBinding('attr.class') cssClass = 'card mt-4';
+  @HostBinding('attr.class') cssClass = 'card mt-5';
   constructor() {
-    this.article = new Article('Angular 2','http://angular.io',10);
+    this.article = new Article('','',0);
   }
 
   voteUp(): Boolean {

@@ -16,6 +16,7 @@ export class AppComponent {
       new Article('Angular 2', 'http://angular.io', 3),
       new Article('Fullstack', 'http://fullstack.io', 2),
       new Article('Angular Homepage', 'http://angular.io', 1),
+      new Article('Formula 1', 'https://www.formula1.com/', 5),
     ];
   }
 

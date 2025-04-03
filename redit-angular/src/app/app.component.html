@@ -1,28 +1,39 @@
-<div>
+
+
+<nav class="navbar navbar-expand-lg sticky-top">
   {{title}}
+</nav>
+
+<div class="position-relative">
+  <div class="container">
+    <form class="jumbotron">
+        <h3 class="display-4">Add a Link</h3>
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input name="title" #newtitle class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="link">Link:</label>
+          <input name="link" #newlink class="form-control">
+        </div>
+      <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">
+        Submit link
+      </button>
+    </form>
+  </div>
+  <div class="container">
+    <!-- start adding here -->
+      @for (art of sortedArticles(); track art) {
+        <app-article [article]="art"></app-article>
+      }
+    <!-- end adding here -->
+  </div>
 </div>
 
-<div class="container">
-  <form class="jumbotron">
-      <h3 class="display-4">Add a Link</h3>
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input name="title" #newtitle class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="link">Link:</label>
-        <input name="link" #newlink class="form-control">
-      </div>
-    <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">
-      Submit link
-    </button>
-  </form>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed bottom-0 start-0 w-100">
+  <div class="container-fluid">
+      <button>+</button>
+  </div>
+</nav>
 
-<div class="container">
-  <!-- start adding here -->
-    @for (art of sortedArticles(); track art) {
-      <app-article [article]="art"></app-article>
-    }
-  <!-- end adding here -->
-</div>
+
